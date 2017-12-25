@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET area listing. */
 router.get('/', function(req, res, next) {
   res.send({
     'username':'john',
@@ -11,11 +10,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-    res.send({
-      'username':'john',
-      'sex':'man',
-      'address':'上海'
-      });
+    var data =  req.body;
+    res.send(data);
   });
 
 module.exports = router;
