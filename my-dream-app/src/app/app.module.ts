@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -11,6 +13,7 @@ import { IndexComponent } from './index/index.component';
 import { AddrComponent } from './addr/addr.component';
 import { AreaComponent } from './area/area.component';
 import { HttpComponent } from './http/http.component';
+import { OrderComponent } from './order/order.component';
 
 export const ROUTES: Routes = [
   { path: '', component: IndexComponent },
@@ -19,6 +22,7 @@ export const ROUTES: Routes = [
   { path: 'addr', component: AddrComponent },
   { path: 'area', component: AreaComponent },
   { path: 'http', component: HttpComponent },
+  { path: 'order', component: OrderComponent },
 ];
 
 @NgModule({
@@ -29,14 +33,17 @@ export const ROUTES: Routes = [
     IndexComponent,
     AddrComponent,
     AreaComponent,
-    HttpComponent
+    HttpComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES),
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    NgZorroAntdModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
